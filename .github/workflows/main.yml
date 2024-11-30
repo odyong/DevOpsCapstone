@@ -1,0 +1,16 @@
+name: CI/CD Pipeline
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secret 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 }}
+        publish_dir: .
